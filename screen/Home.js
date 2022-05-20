@@ -27,7 +27,7 @@ export default function Home() {
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       </View>
       <ScrollView>
-        {/* <Movies movies={movieData && movieData} searchValue={searchValue} /> */}
+        <Movies movies={movieData && movieData} searchValue={searchValue} />
       </ScrollView>
       <BottomTab/>
     </SafeAreaView>
