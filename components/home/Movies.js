@@ -1,7 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-
 export const localMovies = [
   {
     crew: 'James Cameron (dir.), Zoe Saldana, Michelle Yeoh',
@@ -29,19 +28,19 @@ export const localMovies = [
     title: 'Top Gun: Maverick',
     year: '2022',
   },
-//   {
-//     crew: "Graham Moore (dir.), Zoey Deutch, Dylan O'Brien",
-//     fullTitle: 'The Outfit (2022)',
-//     id: 'tt14114802',
-//     imDbRating: '7.1',
-//     imDbRatingCount: '19058',
-//     image:
-//       'https://imdb-api.com/images/original/MV5BYWQ0NWUyMjktYjg4Yy00NmY3LTg2YzEtNWY5OTY5YTc2MjhjXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_Ratio0.6716_AL_.jpg',
-//     rank: '45',
-//     rankUpDown: '-10',
-//     title: 'The Outfit',
-//     year: '2022',
-//   },
+  {
+    crew: "Graham Moore (dir.), Zoey Deutch, Dylan O'Brien",
+    fullTitle: 'The Outfit (2022)',
+    id: 'tt14114802',
+    imDbRating: '7.1',
+    imDbRatingCount: '19058',
+    image:
+      'https://imdb-api.com/images/original/MV5BYWQ0NWUyMjktYjg4Yy00NmY3LTg2YzEtNWY5OTY5YTc2MjhjXkEyXkFqcGdeQXVyMTA2MDU0NjM5._V1_Ratio0.6716_AL_.jpg',
+    rank: '45',
+    rankUpDown: '-10',
+    title: 'The Outfit',
+    year: '2022',
+  },
 ];
 
 export default function Movies({movies, searchValue}) {
