@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-native-fontawesome": "^0.2.7",
     "react": "17.0.2",
     "react-native": "0.68.2",
-    "react-native-fontawesome": "^7.0.0"
+    "react-native-fontawesome": "^7.0.0",
+    "react-native-svg": "^12.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.12",

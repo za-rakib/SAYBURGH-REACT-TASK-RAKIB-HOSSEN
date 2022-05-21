@@ -36,10 +36,10 @@ export default function BottomTab() {
   return (
     <View style={styles.bottomTab}>
       {bottomData.map((data, index) => (
-        // <TouchableOpacity key={index}>
-        //   <FontAwesomeIcon style={styles.icon} size={25} icon={data.icon} />
-        //   <Text>{data.text}</Text>
-        // </TouchableOpacity>
+        <TouchableOpacity key={index}>
+          <FontAwesomeIcon style={styles.icon} size={25} icon={data.icon} />
+          <Text style={styles.text}>{data.text}</Text>
+        </TouchableOpacity>
       ))}
     </View>
   );
@@ -53,7 +53,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
   },
   icon: {
+      color:"teal",
     marginBottom: 3,
     alignSelf: "center",
   },
+  text:{
+      color:"#000"
+  }
 });

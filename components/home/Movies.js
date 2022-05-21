@@ -43,9 +43,8 @@ export const localMovies = [
   },
 ];
 
-export default function Movies({movies, searchValue}) {
-  console.log('searchValue', searchValue);
-
+export default function Movies({movies, searchValue,loading}) {
+  
   return (
     <View>
       {movies &&
@@ -60,12 +59,22 @@ export default function Movies({movies, searchValue}) {
             }
           })
           .map((movie, index) => (
+            //   <View>
+            //      <Text>
+            //      {movie.title}
+            //      </Text>
+            //   </View>
             <TouchableOpacity key={index}>
-              <Text>{movie.title}</Text>
+              <Text style={styles.title}>{movie.title}</Text>
             </TouchableOpacity>
           ))}
+
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    title:{
+        color:'red'
+    }
+});
