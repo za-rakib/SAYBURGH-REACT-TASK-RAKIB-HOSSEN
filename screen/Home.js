@@ -14,7 +14,7 @@ export default function Home() {
   const [moviePerPage] = useState(10);
 
   console.log('currentPage', currentPage);
-//   const movieApi = `https://imdb-api.com/en/API/MostPopularMovies/k_h5ru7qxa`;
+  const movieApi = `https://imdb-api.com/en/API/MostPopularMovies/k_h5ru7qxa`;
 
   useEffect(() => {
     const getAllMovie = async () => {
