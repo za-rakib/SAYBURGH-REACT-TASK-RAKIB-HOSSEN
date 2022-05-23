@@ -1,5 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  Dimensions,
+} from 'react-native';
+import MovieCard from './MovieCard';
+let {width} = Dimensions.get('window');
 
 export const localMovies = [
   {
@@ -43,8 +51,7 @@ export const localMovies = [
   },
 ];
 
-export default function Movies({movies, searchValue,loading}) {
-  
+export default function Movies({movies, searchValue, totalMovie, navigation}) {
   return (
     <View>
       {movies &&
@@ -59,22 +66,22 @@ export default function Movies({movies, searchValue,loading}) {
             }
           })
           .map((movie, index) => (
-            //   <View>
-            //      <Text>
-            //      {movie.title}
-            //      </Text>
-            //   </View>
-            <TouchableOpacity key={index}>
-              <Text style={styles.title}>{movie.title}</Text>
+            <TouchableOpacity
+              key={index}
+              style={styles.container}
+              onPress={() => navigation.navigate('Single Movie')}>
+              <MovieCard movie={movie} />
             </TouchableOpacity>
           ))}
-
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    title:{
-        color:'red'
-    }
+  container: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  card: {},
 });
