@@ -1,10 +1,7 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {
-  faArrowLeft,
-  faArrowRight,
-} from '@fortawesome/free-solid-svg-icons';
+import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 export default function LoadingButton({currentPage, setCurrentPage}) {
   const handleLeft = () => {
@@ -15,9 +12,11 @@ export default function LoadingButton({currentPage, setCurrentPage}) {
   };
   return (
     <View style={styles.loading}>
-      <TouchableOpacity onPress={handleLeft} style={styles.icons}>
-        <FontAwesomeIcon style={styles.icon} size={25} icon={faArrowLeft} />
-      </TouchableOpacity>
+      {currentPage > 1 && (
+        <TouchableOpacity onPress={handleLeft} style={styles.icons}>
+          <FontAwesomeIcon style={styles.icon} size={25} icon={faArrowLeft} />
+        </TouchableOpacity>
+      )}
       <TouchableOpacity onPress={handleRight} style={styles.icons}>
         <FontAwesomeIcon style={styles.icon} size={25} icon={faArrowRight} />
       </TouchableOpacity>
@@ -32,7 +31,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   icons: {
-    height: 35,
+    height: 30,
     width: 50,
     backgroundColor: '#fff',
     display: 'flex',

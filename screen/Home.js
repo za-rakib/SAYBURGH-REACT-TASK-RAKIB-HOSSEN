@@ -6,15 +6,15 @@ import Movies, {localMovies} from '../components/home/Movies';
 import BottomTab from '../components/home/BottomTab';
 import LoadingButton from '../components/home/LoadingButton';
 
-export default function Home() {
+export default function Home({navigation}) {
   const [searchValue, setSearchValue] = useState('');
   const [totalMovie, setTotalMovie] = useState(localMovies);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [moviePerPage] = useState(10);
 
-  console.log('currentPage', currentPage);
-  const movieApi = `https://imdb-api.com/en/API/MostPopularMovies/k_h5ru7qxa`;
+ // console.log('currentPage', currentPage);
+  const movieApi = `https://imdb-api.com/en/API/MostPopularMovies/k_wtm5x4ia`;
 
   useEffect(() => {
     const getAllMovie = async () => {
@@ -34,23 +34,28 @@ export default function Home() {
   const currentMovie = totalMovie.slice(indexOfFirstMovie, indexOfLastMovie);
 
   return (
+    //   <View>
+    //       <Text>HOME</Text>
+    //   </View>
     <SafeAreaView style={styles.container}>
       <View style={styles.headerItems}>
         <Header />
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       </View>
-      <ScrollView>
+      <ScrollView style={styles.movieList}>
         <Movies
           movies={currentMovie}
           searchValue={searchValue}
-          loading={loading}
+          totalMovie={totalMovie}
+          navigation={navigation}
+
         />
       </ScrollView>
       <LoadingButton
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
-      <BottomTab />
+      {/* <BottomTab /> */}
     </SafeAreaView>
   );
 }
@@ -64,4 +69,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 10,
   },
+  movieList:{
+    width: "100%",
+  }
 });
