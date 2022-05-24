@@ -13,7 +13,7 @@ export default function Home({navigation}) {
   const [currentPage, setCurrentPage] = useState(1);
   const [moviePerPage] = useState(10);
 
- // console.log('currentPage', currentPage);
+  // console.log('currentPage', currentPage);
   const movieApi = `https://imdb-api.com/en/API/MostPopularMovies/k_wtm5x4ia`;
 
   useEffect(() => {
@@ -42,13 +42,13 @@ export default function Home({navigation}) {
         <Header />
         <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
       </View>
+      <Text style={styles.mainTitle}>Most Popular Movies</Text>
       <ScrollView style={styles.movieList}>
         <Movies
           movies={currentMovie}
           searchValue={searchValue}
           totalMovie={totalMovie}
           navigation={navigation}
-
         />
       </ScrollView>
       <LoadingButton
@@ -69,7 +69,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 10,
   },
-  movieList:{
-    width: "100%",
-  }
+  mainTitle: {
+    alignSelf: 'center',
+    margin: 5,
+    fontSize: 20,
+    color: 'teal',
+    fontWeight: 'bold',
+  },
+  movieList: {
+    width: '100%',
+  },
 });

@@ -69,7 +69,9 @@ export default function Movies({movies, searchValue, totalMovie, navigation}) {
             <TouchableOpacity
               key={index}
               style={styles.container}
-              onPress={() => navigation.navigate('Single Movie')}>
+              onPress={() =>
+                navigation.navigate('Single Movie', {movie})
+              }>
               <MovieCard movie={movie} />
             </TouchableOpacity>
           ))}

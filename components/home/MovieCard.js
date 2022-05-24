@@ -15,8 +15,8 @@ export default function MovieCard({movie}) {
     <View style={styles.container}>
       <Image style={styles.image} source={{uri: movie.image}} />
       <Text style={styles.title}>
-        {movie.title.length > 40
-          ? movie.title.substring(0, 40 - 3) + '...'
+        {movie.title.length > 30
+          ? movie.title.substring(0, 30 - 3) + '...'
           : movie.title}
       </Text>
     </View>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   image: {
-    width: width / 1.3,
+    width: width / 1.5,
     height: width / 1.6,
   },
   title: {

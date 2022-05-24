@@ -12,7 +12,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   header: {
     alignSelf: 'center',
-    paddingTop: 10,
+    padding: 10,
   },
   logo: {
     fontSize: 30,
