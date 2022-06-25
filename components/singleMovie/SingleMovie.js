@@ -34,13 +34,13 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   img: {
-    height: width / 1.5,
-    width: width / 1.3,
+    height: width / 1.6,
+    width: width / 1.5,
   },
   fullTitle: {
     fontSize: 18,
     marginTop: 5,
-    color:'teal',
+    color:'read',
     fontWeight: 'bold',
   },
   textArea: {
